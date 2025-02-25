@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #ffb200;
+  --secondary: #1e2229;
+  --primary-900: #c20006;
+  --primary-foreground: #ffffff;
+  --orange-primary: #e2b403;
+  --light-primary-transparent: #82c341e5;
+  --primary-transparent: #2ba149e5;
+  --text-main: #161439;
+  --text-secondary: #6d6c80;
+  --border-main: #f3f3f3ee;
+  --hover-link: #f7f7f7ee;
+}
+
+body,
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  color: white;
+  font-family: var(--font-urbanist-sans);
+}
+
+.btn-login {
+  @apply bg-primary   hover:text-primary;
+}
+.box-content {
+  @apply overflow-hidden rounded-lg bg-white p-2 shadow-baseShadow md:p-4;
+}
+.link-smooth {
+  @apply transition duration-300;
+}
+
+.my-text {
+  color: transparent;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 white;
+}
