@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${urbanistSans.variable} ${geistMono.variable} antialiased`}>
         <DynamicHeader />
-        <main className="bg-secondary">{children}</main>
+        <main className="bg-secondary min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

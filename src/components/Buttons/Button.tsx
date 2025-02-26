@@ -8,7 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "contained" | "outlined" | "text";
   size?: "sm" | "md" | "lg";
   icon?: React.ReactNode;
-  href?: string; // Fixed typo
+  href?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({

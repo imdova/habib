@@ -5,14 +5,14 @@ export const commonLinks = [
   },
   {
     title: "About",
-    url: "/about",
+    url: "/about-me",
   },
   {
     title: "Projects",
-    url: "/about-us",
+    url: "/projects",
   },
   {
     title: "Case Studies",
-    url: "#",
+    url: "/case-study",
   },
 ];

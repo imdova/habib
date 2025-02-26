@@ -1,15 +1,13 @@
 import Link from "next/link";
 export default function NotFoundPage() {
   return (
-    <div className="flex flex-col items-center justify-center bg-white text-main h-screen">
+    <div className="flex flex-col items-center justify-center  h-screen">
       <div className="px-6 text-center">
         <h1 className="mb-6 bg-gradient-to-r from-primary to-light-primary bg-clip-text text-[9rem] font-extrabold tracking-tight text-transparent">
           404
         </h1>
-        <p className="mb-4 text-2xl font-semibold text-secondary">
-          Page Not Found
-        </p>
-        <p className="mb-8 text-lg text-secondary">
+        <p className="mb-4 text-2xl font-semibold ">Page Not Found</p>
+        <p className="mb-8 text-lg ">
           We couldn&apos;t find the page you were looking for. It might have
           been moved or deleted.
         </p>
@@ -20,8 +18,8 @@ export default function NotFoundPage() {
         </Link>
       </div>
 
-      <div className="absolute bottom-4 text-sm text-secondary">
-        <p>© {new Date().getFullYear()} Elvera. All rights reserved.</p>
+      <div className="absolute bottom-4 text-sm ">
+        <p>© {new Date().getFullYear()} Imdova. All rights reserved.</p>
       </div>
     </div>
   );

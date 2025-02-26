@@ -1,5 +1,5 @@
 import { Exprience } from "@/types";
-
+// dummy Exprience data
 export const ExprienceData: Exprience[] = [
   {
     title: "Business Strategy Development",

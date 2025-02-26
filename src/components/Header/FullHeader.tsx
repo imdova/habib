@@ -13,7 +13,7 @@ const FullHeader: React.FC<BaseHeaderProps> = ({ pathname }) => {
   return (
     <header
       className={`${
-        isScrolled ? "shadow-xl " : ""
+        isScrolled ? "shadow-lg " : ""
       } bg-secondary left-0 top-0 fixed z-50 w-full transition-all  duration-300`}>
       <div className="absolute overflow-hidden h-24"></div>
       <div className="container mx-auto px-6 lg:max-w-[1170px]">
@@ -89,7 +89,7 @@ const FullHeader: React.FC<BaseHeaderProps> = ({ pathname }) => {
               <Link
                 key={link.title}
                 href={link.url}
-                className={`font-medium capitalize rounded-md link-smooth p-3 mb-2 text-white${
+                className={`font-medium capitalize rounded-md link-smooth p-3 mb-2 text-white ${
                   isPage ? "bg-primary text-white" : ""
                 } ${
                   isScrolled

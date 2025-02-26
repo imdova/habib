@@ -1,187 +1,71 @@
-"use client";
-import Landing_Img from "@/assets/images/landing-1.png";
-import Landing_Img_2 from "@/assets/images/landing-2.png";
-import Landing_Img_3 from "@/assets/images/landing-3.png";
-import Avatar from "@/assets/images/avatar.png";
-import Doutes from "@/assets/images/doute.png";
-import Image from "next/image";
-import { Download, Globe, Linkedin, Phone, ShoppingBag } from "lucide-react";
-import Link from "next/link";
-import Button from "@/components/Buttons/Button";
-import Mainheading from "@/components/headings/MainHeading";
-import ExprienceCard from "@/components/ExprienceCard";
-import { ExprienceData } from "@/constants/exprience.data";
-import { HelpsData } from "@/constants/helps.data";
+import MainHeading from "@/components/headings/MainHeading";
 import HelpCard from "@/components/HelpCard";
+import ProjectCard from "@/components/ProjectCard";
+import { HelpsData } from "@/constants/helps.data";
+import { projects } from "@/constants/projects.data";
 
-export default function Home() {
+export default function ProjectsPage() {
   return (
     <>
-      {/* Section Landing Page */}
-      <section className="relative h-[800px]">
-        <Image
-          className="absolute bottom-1 left-0 object-cover w-full h-full opacity-20"
-          src={Landing_Img}
-          alt="Landing Img"
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-25% from-[#1e2229] to-[#ffb3001c]"></div>
+      {/*Landing section */}
+      <section className="relative h-[600px] ">
         <div className="container mx-auto px-6 lg:max-w-[1170px] h-full">
           <div className="relative flex items-center justify-center gap-5  h-full ">
-            <div className="flex flex-col items-center  flex-1">
-              <Image
-                className="w-[180px] h-[180px] md:w-[250px] md:h-[250px] rounded-full object-cover mb-6"
-                src={Avatar}
-                alt="Landing Img"
-              />
-              <h1 className="text-3xl lg:text-6xl text-white font-bold mb-6 text-center max-w-[600px]">
-                Transforming
-                <span className="text-primary text-3xl lg:text-6xl mx-1">
-                  Ideas
-                </span>
-                into Scalable
-                <span className="text-primary text-3xl lg:text-6xl mx-1">
-                  Success
-                </span>
-              </h1>
-              <p className="text-xl text-white mb-4 text-center max-w-[400px] leading-relaxed">
-                <span className="text-primary text-xl">Dr. Ahmed Habib</span>,
-                help businesses unlock their full potential through strategy.
-              </p>
-              <Button
-                color="primary"
-                variant="contained"
-                size="lg"
-                icon={<Download size={15} />}
-                href="#">
-                Consulting Profile
-              </Button>
-              <ul className="flex items-center gap-6 mt-6 p-5 rounded-xl border bg-[#0000008c]">
-                <li>
-                  <Link className="block px-3" href={"#"}>
-                    <Globe size={18} />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block px-3" href={"#"}>
-                    <Linkedin size={18} />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block px-3" href={"#"}>
-                    <ShoppingBag size={18} />
-                  </Link>
-                </li>
-                <li>
-                  <Link className="block px-3" href={"#"}>
-                    <Phone size={18} />
-                  </Link>
-                </li>
-              </ul>
+            <div className="flex items-center w-full pt-12 md:pt-0">
+              <div>
+                <MainHeading
+                  bgHeading="My Work"
+                  smallHeading="What I Did"
+                  mainHeadng={{ sliceOne: "Projects ", sliceTwo: "" }}
+                />
+                <div className="mt-16 pl-6 border-l-4 border-primary">
+                  <p className="text-lg md:text-xl mb-8">
+                    Dr. Ahmed Habib has a proven track record of helping
+                    startups and SMEs achieve growth, scalability, and
+                    operational excellence through innovative business
+                    strategies and digital transformation initiatives
+                  </p>
+                  <p className="text-lg md:text-xl">
+                    Below are some of his key projects and how he delivered
+                    measurable results for his clients:
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Section one */}
-      <section className="py-16 bg-gradient-to-r  from-80% from-[#1e2229] to-[#ffb3000c]">
+      {/* section one */}
+      <section className="py-16">
         <div className="container mx-auto px-6 lg:max-w-[1170px]">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex justify-center items-center w-full ">
-              <div className="relative w-fit rounded-md ">
-                <Image
-                  className="relative object-cover w-[350px] h-[450px] rounded-lg  m-auto lg:m-0 z-10 "
-                  src={Landing_Img_2}
-                  alt="Landing Img"
+          <h2 className="relative text-3xl lg:text-5xl font-bold mb-12 m-auto border-b border-secondary-light w-fit pb-6 before:absolute before:h-[1px] before:w-[120px] before:bottom-0 before:bg-primary before:left-1/2 before:-translate-x-1/2">
+            My{" "}
+            <span className="text-3xl lg:text-5xl text-primary">Projects</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+            {projects.map((project, index) => {
+              return (
+                <ProjectCard
+                  id={project.id}
+                  key={project.id}
+                  image={project.image}
+                  title={project.title}
+                  name={project.name}
+                  client={project.client}
+                  challenge={project.challenge}
                 />
-                <Image
-                  className="absolute -bottom-5 -left-5 object-cover  "
-                  src={Doutes}
-                  alt="Landing Img"
-                />
-                <div className="absolute -top-4 -right-4 w-full h-full rounded-lg border-2 border-primary"></div>
-              </div>
-            </div>
-            <div className="w-full">
-              <h1 className="text-3xl lg:text-4xl font-bold mb-4 leading-relaxed">
-                Failure is the condiment That Gives
-                <span className="text-primary text-3xl lg:text-4xl mx-1">
-                  Success
-                </span>
-              </h1>
-              <p className="text-lg mb-6">
-                Dr. Ahmed Habib is a seasoned consultant with over a decade of
-                experience. By combining his expertise in{" "}
-                <b>business strategy</b> and <b>digital transformation</b>, he
-                provides holistic solutions that drive innovation, efficiency,
-                and sustainable success.
-              </p>
-              <div className="flex gap-4">
-                <Button
-                  className="w-[250px] h-[50px]  mb-10"
-                  variant="outlined"
-                  color="primary"
-                  href="/contact-us"
-                  size="md">
-                  Contact Me
-                </Button>
-                <Button
-                  className="w-[250px] h-[50px] mb-10"
-                  color="primary"
-                  size="md">
-                  Ask for a meeting
-                </Button>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
-      {/* section Two  */}
-      <section className="relative lg:max-h-[620px]  pb-16 overflow-hidden  bg-gradient-to-r from-80% from-[#1e2229] to-[#ffb3000c]">
-        <div className="container mx-auto px-6 lg:max-w-[1170px]">
-          <Image
-            className="absolute bottom-1 left-0 object-cover w-full h-full opacity-20"
-            src={Landing_Img_3}
-            alt="Landing Img"
-          />
-        </div>
-        <div className="relative py-16">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary w-[250px] md:w-[600px] h-[0.5px]"></div>
-          <div>
-            <div className="container mx-auto px-6 lg:max-w-[1170px]">
-              <div className="flex justify-between flex-col md:flex-row mb-12">
-                {/* main heading  */}
-                <Mainheading
-                  bgHeading="My Career"
-                  smallHeading="My Experience"
-                  mainHeadng={{ sliceOne: "Core ", sliceTwo: "Expertise" }}
-                />
-                <p className="border-l-2 border-primary text-lg max-w-[400px] pl-3 mt-6 md:mt-0 h-fit">
-                  Dr. Habib delivers tailored strategies that align with your
-                  unique goals and challenges.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-4">
-                {ExprienceData.map((exprience, index) => {
-                  return (
-                    <ExprienceCard
-                      key={index}
-                      title={exprience.title}
-                      list={exprience.list}
-                      alpha={exprience.alpha}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* section three  */}
-      <section className="relative py-16 bg-gradient-to-r from-80% from-[#1e2229] to-[#ffb3000c]">
+      {/* section Two */}
+      <section className="relative py-16 ">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary w-[250px] md:w-[600px] h-[0.5px] "></div>
         <svg
-          className="absolute top-5 left-1/2 -translate-x-1/2"
-          width="150"
-          height="150"
+          className=" absolute top-5 left-1/2 -translate-x-1/2"
+          width="180"
+          height="180"
           viewBox="0 0 274 364"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +91,7 @@ export default function Home() {
         <div className="container mx-auto px-6 lg:max-w-[1170px]">
           <div className="flex flex-col items-center mb-12">
             <h1 className="text-4xl text-primary font-bold mb-3">How?</h1>
-            <p className="text-center text-lg">
+            <p className="text-lg">
               Dr. Ahmed Habib Helps Startups and SMEs Grow and Scale
             </p>
           </div>
@@ -225,13 +109,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* section four  */}
-      <section className="relative py-16 bg-gradient-to-r from-80% from-[#1e2229] to-[#ffb3000c]">
+      {/* section Three */}
+      <section className="relative py-16 ">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-primary w-[250px] md:w-[600px] h-[0.5px] "></div>
         <div className="container mx-auto px-6 lg:max-w-[1170px]">
           <div className="flex justify-between flex-col md:flex-row mb-12">
             {/* main heading  */}
-            <Mainheading
+            <MainHeading
               bgHeading="Cooperation"
               smallHeading="Why?"
               mainHeadng={{

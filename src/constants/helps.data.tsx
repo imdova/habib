@@ -7,7 +7,7 @@ import {
   Store,
   Users,
 } from "lucide-react";
-
+// dummy help data
 export const HelpsData: helps[] = [
   {
     title: "Business Strategy Development",
