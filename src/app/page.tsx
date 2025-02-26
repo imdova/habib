@@ -136,7 +136,7 @@ export default function Home() {
       </section>
       {/* section Two  */}
       <section className="relative lg:max-h-[620px] pb-16 overflow-hidden bg-gradient-to-r from-80% from-[#1e2229] to-[#ffb3000c]">
-        <div className="container mx-auto px-6 lg:max-w-[1170px]">
+        <div className="container mx-auto  px-6 lg:max-w-[1170px]">
           <Image
             className="absolute bottom-1 left-0 object-cover w-full h-full opacity-20"
             src={Landing_Img_3}
