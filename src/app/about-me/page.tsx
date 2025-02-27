@@ -49,11 +49,11 @@ export default function AboutMe() {
                       - With a proven track record of delivering strategic
                       solutions, Dr. Habib has helped startups, SMEs, and large
                       corporations achieve sustainable success in competitive
-                      markets
+                      markets. 
                     </li>
                     <li className="text-lg md:text-xl mb-4 py-4">
                       - His expertise spans business strategy, market expansion,
-                      digital transformation, and leadership development
+                      digital transformation and leadership development
                     </li>
                   </ul>
                 </div>
